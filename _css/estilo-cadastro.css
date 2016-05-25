@@ -1,0 +1,94 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #606060;
+
+}
+
+div#interface{
+    width: 1000px;
+    background-color: black;
+    margin: -10px auto 0px auto;
+}
+
+p {
+    text-align: justify;
+    text-indent: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+div#logo{
+    /*    font-family: 'Poiret One', cursive;*/
+    font-family: 'Kaushan Script', cursive;
+    text-shadow: 3px 2px 5px #606060; /* lateral , baixo, largura da sombra*/
+    color: whitesmoke;
+    font-size: 40pt;
+    font-weight: bolder;
+    text-align: center;
+    position: relative;
+    top: 80px;
+}
+
+figure#img-logo{
+    position: absolute;
+    left: 900px;
+    top: -50px;
+}
+
+nav#menu{
+    border-bottom: 2px solid #606060;
+    margin-top: 155px;
+}
+
+nav#menu {
+    display: block;
+}
+nav#menu ul{
+    position: absolute;
+    top: -10px;
+    left: 440px;
+    padding: 15px;
+}
+
+nav#menu li{
+    display: inline-block;
+    margin-top: 160px;
+    padding: 20px;
+    font-family: 'Poiret One', cursive;
+    font-weight: bolder;
+    font-size: 15pt;
+}
+
+div#corpo {
+	position: relative;
+	left: 200px;
+	width: 500px;
+	padding: 30px;
+}
+
+
+footer#rodape{
+    clear: both;
+    border-top: 2px solid #606060;
+    text-align: center;
+}
+
+footer#rodape a{
+
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+a:hover{
+    color: gray;
+    text-decoration: underline;
+    transition: 1s;
+    
+}
