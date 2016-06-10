@@ -17,7 +17,7 @@
             <nav id="menu">
                 <ul id="menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="filmes.html">Filmes</a></li>
+                    <li><a href="filmes.php">Filmes</a></li>
                     <li><a href="cadastroFilme.php">Cadastro</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
@@ -31,24 +31,24 @@
 	 $senha = '';
 	 $banco = 'CASA';
 
-$link = mysql_connect($servidor, $usuario, $senha) or die('N�o foi poss�vel conectar: '.mysql_error());
+$mysqli = new mysqli($servidor, $usuario, $senha, $banco) or die('Não foi possível conectar: '.mysqli_error($mysqli));
 
-$select = mysql_select_db($banco);
+$select = mysqli_select_db($mysqli, $banco);
 
-if($_REQUEST["acao"] == "adicionar")
+if(isset($_POST['btCadastrar']))
 {
 	$sql = "INSERT INTO FILME (CD_FILME, DC_FILME, ANO_LANC, DC_GENERO, TEMPO_DUR) VALUES (";
-	$sql .="'".$_REQUEST["tCod"]."', ";
-	$sql .="'".$_REQUEST["tTitulo"]."', ";
-	$sql .="'".$_REQUEST["tAno"]."', ";
-	$sql .="'".$_REQUEST["tGenero"]."', ";
-	$sql .="'".$_REQUEST["tTempo"]."'";
+	$sql .="'".$_POST["tCod"]."', ";
+	$sql .="'".$_POST["tTitulo"]."', ";
+	$sql .="'".$_POST["tAno"]."', ";
+	$sql .="'".$_POST["tGenero"]."', ";
+	$sql .="'".$_POST["tTempo"]."'";
 	$sql .=")";
 
-$result = mysql_query($sql);
+$result = mysqli_query($mysqli, $sql);
 
 if(!$result)
-{ die('Erro: '.mysql_error()); }
+{ die('Erro: '.mysqli_error($mysqli)); }
 
 else
 { echo 'A operação foi realizada com sucesso.'; }

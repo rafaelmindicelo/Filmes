@@ -17,7 +17,7 @@
             <nav id="menu">
                 <ul id="menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="filmes.html">Filmes</a></li>
+                    <li><a href="filmes.php">Filmes</a></li>
                     <li><a href="cadastroFilme.php">Cadastro</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
@@ -25,11 +25,11 @@
             
             <div id="corpo">
             
-            <form method="POST" action="gerencia-registro.php?acao=adicionar">
+            <form method="POST" action="gerencia-registro.php">
             <fieldset>
             <legend id="filme">Informações do Filme</legend>
             <p><input type="number" name="tCod" id="cCod" hidden="cCod" min="1" max="1000" size="4" readonly="readonly" /></p>
-            <p><label for="cTitulo">Título: </label><input type="text" name="tTitulo" id="cTitulo" maxlength="30" size="30" /> </p>
+            <p><label for="cTitulo">Título: </label><input type="text" name="tTitulo" id="cTitulo" maxlength="30" size="30" autofocus="autofocus" /> </p>
             <p><label for="cAno">Ano lançamento: </label><input type="number" name="tAno" id="cAno" min="1900" max="9999" size="4" /> </p>
             <p><label for="cTempo">Tempo Duração: </label><input type="time" name="tTempo" id="cTempo" /></p>
             <p><label for="cGenero">Gênero: </label><select name="tGenero" id="cGenero">
@@ -48,7 +48,7 @@
             
             </select> </p>
             
-            <p><input type="submit" value="Cadastrar" />
+            <p><input type="submit" name="btCadastrar" value="Cadastrar" />
             <input type="reset" value="Limpar" /></p>
             </form>
             </fieldset>
