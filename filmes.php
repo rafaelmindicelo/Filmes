@@ -56,47 +56,18 @@
             <?php 
             
             $result = mysqli_query($mysqli, $sql);
-            while($tbl = mysqli_fetch_array($result)) 
+            while($tbl = mysqli_fetch_array($result))
             
             {
             	echo "<tr>";
-            	
-            	if (isset($_POST['CD_FILME']))
-            	{
-            	$cdfilme = $tbl["CD_FILME"];
-            	echo "<td>$cdfilme</td>";
-            	}
-            	
-            	if (isset($_POST['DC_FILME']))
-            	{
-            	$dcfilme = $tbl["DC_FILME"];
-            	echo "<td>$dcfilme</td>";
-            	}
-            	
-            	if (isset($_POST['ANO_LANC']))
-            	{
-            	$anolanc = $tbl["ANO_LANC"];
-            	echo "<td>$anolanc</td>";
-            	}
-            	
-            	if (isset($_POST['DC_GENERO']))
-            	{
-            	$dcgenero = $tbl["DC_GENERO"];
-            	echo "<td>$dcgenero</td>";
-            	}
-            	
-            	if (isset($_POST['TEMPO_DUR']))
-            	{
-            	$tempodur = $tbl["TEMPO_DUR"];
-            	echo "<td>$tempodur</td>";
-            	}
-            	          	    	
+            	echo "<td>".$tbl['cd_filme']."</td>";
+            	echo "<td>".$tbl['dc_filme']."</td>";
+            	echo "<td>".$tbl['ano_lanc']."</td>";
+            	echo "<td>".$tbl['dc_genero']."</td>";
+            	echo "<td>".$tbl['tempo_dur']."</td>";
             	echo "</tr>";
             }
-            /*$areia = array();
-            $areia[] = array ('cd_filme'=>$tbl['cdfilme'], 'dcfilme'=>$tbl['dcfilme'], 'anolanc'=>$tbl['anolanc'], 'dcgenero'=>$tbl['dcgenero'],  'tempodur'=>$tbl['tempodur']);
-            		return $areia;
- 			*/
+            
             ?>              
             </table>
             <BR><a href="cadastroFilme.php">Clique aqui para cadastrar um novo filme.</a>
