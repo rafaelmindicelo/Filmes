@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include("../parts/head", { title: 'Contato'}) %> 
+  </head>
+  <body>
+    <%- include("../parts/header") %> 
+
+    <div id="interface" class="container">
+      <div class="jumbotron">
+        <h1 class="display-5">Entre em contato</h1>
+        <hr class="my-4" />
+        <div id="teste" align="center">
+          <div class="contact row col-xs-3 col-sm-3 col-md-3 col-lg-3" align="center">
+            <a href="https://www.linkedin.com/in/rafael-mindicelo-2171389b/">
+              <img src="./images/linkedin.png" alt="linkedin" />
+            </a>
+          </div>
+          <div class="contact row col-xs-3 col-sm-3 col-md-3 col-lg-3" align="center">
+            <a href="mailto: rmindicelo@gmail.com">
+              <img src="./images/gmail.png" alt="gmail" />
+            </a>
+          </div>
+          <div class="contact row col-xs-3 col-sm-3 col-md-3 col-lg-3" align="center">
+            <a href="https://www.facebook.com/rafaelmindicelo/">
+              <img src="./images/facebook.png" alt="facebook" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <%- include("../parts/footer") %>     
+    </div>
+    <%- include("../parts/bundle") %>    
+  </body>
+</html>

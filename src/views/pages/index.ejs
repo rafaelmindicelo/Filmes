@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include("../parts/head", { title: 'Home'}) %>
+  <body>
+    <%- include("../parts/header") %>
+    <div id="interface" class="container">
+      <div id="carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel" data-slide-to="1"></li>
+          <li data-target="#carousel" data-slide-to="2"></li>
+          <li data-target="#carousel" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-interval="4000">
+            <img src="/images/batman.png" class="d-block w-100" alt="Batman" />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Batman</h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+                illo, velit hic facere quaerat ipsam voluptatibus nisi dicta.
+              </p>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-interval="4000">
+            <img
+              src="/images/kingkong.png"
+              class="d-block w-100"
+              alt="King Kong"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>King Kong</h5>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Incidunt accusantium nihil pariatur assumenda esse harum a
+                aliquam.
+              </p>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-interval="4000">
+            <img
+              src="/images/liga.png"
+              class="d-block w-100"
+              alt="Liga da Justiça"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Liga da Justiça</h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+                quia vitae fugit sit ullam suscipit id explicabo.
+              </p>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-interval="4000">
+            <img
+              src="/images/vingadores.png"
+              class="d-block w-100"
+              alt="Vingadores"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Vingadores</h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corporis excepturi harum nisi nobis voluptatum? Nemo magni
+                tenetur.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <a
+          class="carousel-control-prev"
+          href="#carousel"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carousel"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <%- include("../parts/footer") %>
+    </div>
+    <%- include("../parts/bundle") %>
+  </body>
+</html>

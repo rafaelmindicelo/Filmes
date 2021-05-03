@@ -1,0 +1,34 @@
+header nav a {
+  color: white;
+}
+
+header nav a:hover{
+  font-weight: 600;
+  color: white;
+  font-size: 17px;
+}
+
+.container{
+  background-color: #e9ecef;
+}
+
+#interface{
+  margin: 50px auto;
+  padding: 10px;
+}
+
+div.contact{
+  display: inline-block;
+  margin: 50px 5px;   
+}
+
+div.contact img{
+  width: 80px;
+  height: 80px;
+}
+
+footer#rodape{
+  text-align: center;
+  font-style: italic;
+  font-weight: 600;
+}

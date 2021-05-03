@@ -1,0 +1,29 @@
+{
+  "name": "Filmes",
+  "version": "1.0.0",
+  "description": "Projeto criado para praticar Front-End e Back-End - CRUD - NodeJs ...",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelmindicelo/Filmes-Casa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelmindicelo/Filmes-Casa/issues"
+  },
+  "homepage": "https://github.com/rafaelmindicelo/Filmes-Casa#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

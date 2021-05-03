@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include("../parts/head", { title: 'Cadastro'}) %>
+  <body>
+    <%- include("../parts/header") %>
+
+    <div id="interface" class="container">
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="title">Título</label>
+            <input type="text" class="form-control" id="title" />
+          </div>
+          <div class="form-group col-md-2">
+            <label for="year">Ano</label>
+            <input type="text" class="form-control" id="year" />
+          </div>
+          <div class="form-group col-md-3">
+            <label for="genre">Gênero</label>
+            <select id="genre" class="form-control">
+              <option selected>Escolha...</option>
+              <option value="1">Ação e Aventura</option>
+              <option value="2">Comédia</option>
+              <option value="3">Documentário</option>
+              <option value="4">Drama</option>
+              <option value="5">Romance</option>
+              <option value="6">Terror</option>
+              <option value="7">Outros</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="synopsis">Sinópse</label>
+          <textarea class="form-control" id="synopsis" rows="5"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+      </form>
+
+      <%- include("../parts/footer") %>
+    </div>
+    <%- include("../parts/bundle") %>
+  </body>
+</html>
