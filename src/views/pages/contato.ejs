@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%- include("../parts/head", { title: 'Contato'}) %> 
+    <%- include("../parts/head", { title: 'Contato'}) %>
   </head>
   <body>
-    <%- include("../parts/header") %> 
+    <%- include("../parts/header") %>
 
     <div id="interface" class="container">
-      
-        <h2 class="display-5">Entre em contato</h2>
-        <hr class="my-4" />
-        <div id="panel" align="center">
-          <div class="contact row col-xs-3 col-sm-3 col-md-3 col-lg-3" align="center">
-            <a href="https://www.linkedin.com/in/rafael-mindicelo-2171389b/">
-              <img src="./images/linkedin.png" alt="linkedin" />
-            </a>
-          </div>
-          <div class="contact row col-xs-3 col-sm-3 col-md-3 col-lg-3" align="center">
-            <a href="mailto: rmindicelo@gmail.com">
-              <img src="./images/gmail.png" alt="gmail" />
-            </a>
-          </div>
-          <div class="contact row col-xs-3 col-sm-3 col-md-3 col-lg-3" align="center">
-            <a href="https://www.facebook.com/rafaelmindicelo/">
-              <img src="./images/facebook.png" alt="facebook" />
-            </a>
-          </div>
-        </div>
-      
+      <h2 class="display-5">Entre em contato</h2>
+      <hr class="my-4" />
 
-      <%- include("../parts/footer") %>     
+      <div class="d-flex bd-highlight">
+
+        <div
+          class="contact p-2 flex-fill bd-highlight align-items-center">
+          <a href="https://www.linkedin.com/in/rafael-mindicelo-2171389b/">
+            <img src="./images/linkedin.png" alt="linkedin" />
+          </a>
+        </div>
+
+        <div
+          class="contact p-2 flex-fill bd-highlight align-items-center">
+          <a href="mailto: rmindicelo@gmail.com">
+            <img src="./images/gmail.png" alt="gmail" />
+          </a>
+        </div>
+
+        <div
+          class="contact p-2 flex-fill bd-highlight align-items-center">
+          <a href="https://www.facebook.com/rafaelmindicelo/">
+            <img src="./images/facebook.png" alt="facebook" />
+          </a>
+        </div>
+
+      </div>      
     </div>
-    <%- include("../parts/bundle") %>    
+    <%- include("../parts/footer") %>
+    <%- include("../parts/bundle") %>
   </body>
 </html>

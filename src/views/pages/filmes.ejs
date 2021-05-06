@@ -6,61 +6,66 @@
     <div id="interface" class="container">
       <h2 class="display-5">Filmes</h2>
       <hr class="my-4" />
-      <table id="filmes" class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">id</th>
-            <th scope="col">Título</th>
-            <th scope="col">Ano</th>
-            <th scope="col">Gênero</th>
-            <th scope="col">Duração</th>
-            <th scope="col">Sinópse</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Batman vs Superman: A Origem da Justiça</td>
-            <td>2016</td>
-            <td>Ação/Aventura</td>
-            <td>3h3m</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit...</td>
-            <td>
-              <a href="#">
-                <img src="./images/edit_icon.png" alt="Edit_Icon" />
-              </a>
-            </td>
-            <td>
-              <a href="#">
-                <img src="./images/delete_icon.png" alt="Delete_Icon" />
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Vingadores: Ultimato</td>
-            <td>2019</td>
-            <td>Ação/Ficção científica</td>
-            <td>3h2m</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit...</td>
-            <td>
-              <a href="#">
-                <img src="./images/edit_icon.png" alt="Edit_Icon" />
-              </a>
-            </td>
-            <td>
-              <a href="#">
-                <img src="./images/delete_icon.png" alt="Delete_Icon" />
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <%- include("../parts/footer") %>
+      <div class="table-responsive">
+        <table id="filmes" class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Título</th>
+              <th scope="col">Ano</th>
+              <th scope="col">Gênero</th>
+              <th scope="col">Duração</th>
+              <th scope="col">Sinópse</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Batman vs Superman: A Origem da Justiça</td>
+              <td>2016</td>
+              <td>Ação/Aventura</td>
+              <td>3h3m</td>
+              <td>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit...
+              </td>
+              <td>
+                <a href="#">
+                  <img src="./images/edit_icon.png" alt="Edit_Icon" />
+                </a>
+              </td>
+              <td>
+                <a href="#">
+                  <img src="./images/delete_icon.png" alt="Delete_Icon" />
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Vingadores: Ultimato</td>
+              <td>2019</td>
+              <td>Ação/Ficção científica</td>
+              <td>3h2m</td>
+              <td>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit...
+              </td>
+              <td>
+                <a href="#">
+                  <img src="./images/edit_icon.png" alt="Edit_Icon" />
+                </a>
+              </td>
+              <td>
+                <a href="#">
+                  <img src="./images/delete_icon.png" alt="Delete_Icon" />
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+    <%- include("../parts/footer") %>
     <%- include("../parts/bundle") %>
   </body>
 </html>

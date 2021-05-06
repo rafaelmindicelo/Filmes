@@ -12,4 +12,4 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(routes);
 
-app.listen(8080, () => console.log("running :D"));
+app.listen(8080, () => console.log("running :D -> port 8080"));

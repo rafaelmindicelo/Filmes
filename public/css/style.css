@@ -2,53 +2,57 @@ header nav a {
   color: white;
 }
 
-header nav a:hover{
+header nav a:hover {
   font-weight: 600;
   color: white;
   font-size: 17px;
 }
 
-.container{
+.container {
   background-color: #e9ecef;
 }
 
-#interface{
-  margin: 50px auto;
-  padding: 10px;
+#interface {
+  margin-top: 15px;
+  padding: 45px;
+  
 }
 
 div.contact{
-  display: inline-block;
-  margin: 50px 5px;   
+  text-align: center;
 }
 
-div.contact img{
+div.contact img {
   width: 80px;
   height: 80px;
 }
 
-table#filmes td img{
-  width: 25px;  
+table#filmes td img {
+  width: 25px;
 }
 
-table#filmes thead tr th{
+table#filmes thead tr th {
   text-align: center;
 }
 
-form#register{
+form#register {
   margin: 50px auto;
 }
 
-h2.display-5{
+h2.display-5 {
   text-align: center;
 }
 
 button.btn.btn-dark {
   width: 200px;
+  margin-top: 20px;
 }
 
-footer#rodape{
+footer#rodape {
   text-align: center;
   font-style: italic;
   font-weight: 600;
+  width: 50vw;
+  margin-right: auto;
+  margin-left: auto;
 }
