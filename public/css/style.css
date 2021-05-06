@@ -27,6 +27,26 @@ div.contact img{
   height: 80px;
 }
 
+table#filmes td img{
+  width: 25px;  
+}
+
+table#filmes thead tr th{
+  text-align: center;
+}
+
+form#register{
+  margin: 50px auto;
+}
+
+h2.display-5{
+  text-align: center;
+}
+
+button.btn.btn-dark {
+  width: 200px;
+}
+
 footer#rodape{
   text-align: center;
   font-style: italic;

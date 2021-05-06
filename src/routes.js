@@ -7,4 +7,6 @@ routes.get("/cadastro", (req, res) => res.render("pages/cadastro"));
 
 routes.get("/contato", (req, res) => res.render("pages/contato"));
 
+routes.get("/filmes", (req, res) => res.render("pages/filmes"))
+
 module.exports = routes;

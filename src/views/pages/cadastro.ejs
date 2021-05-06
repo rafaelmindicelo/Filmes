@@ -5,9 +5,11 @@
     <%- include("../parts/header") %>
 
     <div id="interface" class="container">
-      <form>
+      <h2 class="display-5">Cadastro de Filmes</h2>
+      <hr class="my-4" />
+      <form id="register">
         <div class="form-row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-6 offset-md-2">
             <label for="title">Título</label>
             <input type="text" class="form-control" id="title" />
           </div>
@@ -15,7 +17,10 @@
             <label for="year">Ano</label>
             <input type="text" class="form-control" id="year" />
           </div>
-          <div class="form-group col-md-3">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-5 offset-md-2">
             <label for="genre">Gênero</label>
             <select id="genre" class="form-control">
               <option selected>Escolha...</option>
@@ -28,14 +33,22 @@
               <option value="7">Outros</option>
             </select>
           </div>
+          <div class="form-group col-md-3">
+            <label for="duration">Duração</label>
+            <input type="text" class="form-control" id="duration" />
+          </div>
         </div>
 
-        <div class="form-group">
-          <label for="synopsis">Sinópse</label>
-          <textarea class="form-control" id="synopsis" rows="5"></textarea>
+        <div class="form-row">
+          <div class="form-group col-md-8 offset-md-2">
+            <label for="synopsis">Sinópse</label>
+            <textarea class="form-control" id="synopsis" rows="5"></textarea>
+          </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <div class="row justify-content-center">
+          <button type="submit" class="btn btn-dark">Cadastrar</button>
+        </div>
       </form>
 
       <%- include("../parts/footer") %>
