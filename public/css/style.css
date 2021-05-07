@@ -13,12 +13,10 @@ header nav a:hover {
 }
 
 #interface {
-  margin-top: 15px;
   padding: 45px;
-  
 }
 
-div.contact{
+div.contact {
   text-align: center;
 }
 
@@ -53,6 +51,5 @@ footer#rodape {
   font-style: italic;
   font-weight: 600;
   width: 50vw;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 15px auto;
 }
