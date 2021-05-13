@@ -51,8 +51,22 @@ module.exports = {
     data = data.filter((movie) => Number(movie.id) !== Number(movieId));
   },
 
-  create(newMovie) {
-    //const db = await Database()
-    data.push(newMovie);
+  async create(newMovie) {
+    const db = await Database();
+
+    await db.run(`
+    INSERT INTO movies (title, year, genre_id, parental_rating, duration, synopsis)
+    VALUES (
+      "${newMovie.title}",
+      ${newMovie.year},
+      ${newMovie.genre},
+      ${newMovie.parental_rating},
+      "${newMovie.duration}",
+      "${newMovie.synopsis}"
+    )
+    ;`);
+
+    await db.close();    
+    
   },
 };

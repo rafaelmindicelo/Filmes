@@ -11,14 +11,10 @@ module.exports = {
     res.render("pages/register", { genres });
   },
 
-  async save(req, res) {
-    const movies = await Movie.get();
-    const lastId = movies[movies.length - 1]?.id || 0;
-
-    Movie.create({
-      id: lastId + 1,
+  async save(req, res) {    
+    await Movie.create({      
       ...req.body,
-    });
+    });   
     
     return res.redirect("/movies");
   },
@@ -52,7 +48,7 @@ module.exports = {
       ...movie,
       title: req.body.title,
       year: req.body.year,
-      genre: req.body.genre,
+      genre_id: req.body.genre,
       parental_rating: req.body.parental_rating,
       duration: req.body.duration,
       synopsis: req.body.synopsis,
