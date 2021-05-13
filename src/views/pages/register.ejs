@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <%- include("../parts/head", { title: 'Cadastro'}) %>
+  <%- include("../parts/head", { title: 'Register'}) %>
   <body>
     <%- include("../parts/header") %>
 
     <div id="interface" class="container">
       <h2 class="display-5">Cadastro de Filmes</h2>
       <hr class="my-4" />
-      <form id="register">
+      <form id="register" action="/register" method="POST">
         <div class="form-row">
           <div class="form-group col-md-6 offset-md-2">
             <label for="title">Título</label>
-            <input type="text" class="form-control" id="title" />
+            <input type="text" class="form-control" id="title" name="title"/>
           </div>
           <div class="form-group col-md-2">
             <label for="year">Ano</label>
-            <input type="text" class="form-control" id="year" />
+            <input type="text" class="form-control" id="year" name="year"/>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group col-md-4 offset-md-2">
             <label for="genre">Gênero</label>
-            <select id="genre" class="form-control">
+            <select id="genre" name="genre" class="form-control">
               <option selected>Escolha...</option>
-              <option value="1">Ação e Aventura</option>
-              <option value="2">Comédia</option>
-              <option value="3">Documentário</option>
-              <option value="4">Drama</option>
-              <option value="5">Romance</option>
-              <option value="6">Terror</option>
-              <option value="7">Outros</option>
+              <option value="Ação e Aventura">Ação e Aventura</option>
+              <option value="Comédia">Comédia</option>
+              <option value="Documentário">Documentário</option>
+              <option value="Drama">Drama</option>
+              <option value="Romance">Romance</option>
+              <option value="Terror">Terror</option>
+              <option value="Outros">Outros</option>
             </select>
           </div>
           <div class="form-group col-md-2">
             <label for="parental_rating">Classificação</label>
-            <input type="number" class="form-control" id="parental_rating" />
+            <input type="number" class="form-control" id="parental_rating" name="parental_rating" />
           </div>
           <div class="form-group col-md-2">
             <label for="duration">Duração</label>
-            <input type="text" class="form-control" id="duration" />
+            <input type="text" class="form-control" id="duration" name="duration"/>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group col-md-8 offset-md-2">
             <label for="synopsis">Sinópse</label>
-            <textarea class="form-control" id="synopsis" rows="5"></textarea>
+            <textarea class="form-control" id="synopsis" name="synopsis" rows="5"></textarea>
           </div>
         </div>
 
         <div class="row justify-content-center">
-          <button type="submit" class="btn btn-dark">Cadastrar</button>
+          <button type="submit" form="register" class="btn btn-dark">Cadastrar</button>
         </div>
       </form>
     </div>

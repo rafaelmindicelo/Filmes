@@ -1,4 +1,4 @@
-# Filmes-Casa
+# Filmes
 
 Projeto simples, criado com o intuito de aplicar os conhecimentos adquiridos nos cursos de Desenvolvimento WEB (Front e Back End)
 

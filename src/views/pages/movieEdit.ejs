@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include("../parts/head", { title: 'Movie Edit'}) %>
+  <body>
+    <%- include("../parts/header") %>
+
+    <div id="interface" class="container">
+      <h2 class="display-5">Editar filme</h2>
+      <hr class="my-4" />
+      <form id="register" action="/movie/<%= movie.id %> " method="POST">
+        <div class="form-row">
+          <div class="form-group col-md-6 offset-md-2">
+            <label for="title">Título</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              name="title"
+              value="<%= movie.title  %>"
+            />
+          </div>
+          <div class="form-group col-md-2">
+            <label for="year">Ano</label>
+            <input
+              type="text"
+              class="form-control"
+              id="year"
+              name="year"
+              value="<%= movie.year  %>"
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-4 offset-md-2">
+            <label for="genre">Gênero</label>
+            <select id="genre" name="genre" class="form-control">
+              <option>Escolha...</option>
+              <option value="Ação e Aventura">Ação e Aventura</option>
+              <option value="Comédia">Comédia</option>
+              <option value="Documentário">Documentário</option>
+              <option value="Drama">Drama</option>
+              <option value="Romance">Romance</option>
+              <option value="Terror">Terror</option>
+              <option value="Outros">Outros</option>
+              <option selected><%= movie.genre %></option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="parental_rating">Classificação</label>
+            <input
+              type="number"
+              class="form-control"
+              id="parental_rating"
+              name="parental_rating"
+              value="<%= movie.parental_rating  %>"
+            />
+          </div>
+          <div class="form-group col-md-2">
+            <label for="duration">Duração</label>
+            <input
+              type="text"
+              class="form-control"
+              id="duration"
+              name="duration"
+              value="<%= movie.duration  %>"
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-8 offset-md-2">
+            <label for="synopsis">Sinópse</label>
+            <textarea
+              class="form-control"
+              id="synopsis"
+              name="synopsis"
+              rows="5"
+            >
+<%= movie.synopsis  %></textarea
+            >
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <button type="submit" form="register" class="btn btn-dark">
+            Salvar
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            data-toggle="modal"
+            data-target="#ModalCenter"
+          >
+            Excluir
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="ModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="Modal - Confirma exclusão"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Excluir Filme</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">Tem certeza que quer excluir o filme?</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="submit" class="btn btn-light" form="delete_movie">
+              Excluir filme
+            </button>
+          </div>
+        </div>
+        <form
+          method="post"
+          id="delete_movie"
+          action="/movie/delete/<%= movie.id %>"
+        ></form>
+      </div>
+    </div>
+
+    <%- include("../parts/footer") %> <%- include("../parts/bundle") %>
+  </body>
+</html>

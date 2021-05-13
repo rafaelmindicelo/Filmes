@@ -41,9 +41,14 @@ h2.display-5 {
   text-align: center;
 }
 
-button.btn.btn-dark {
+button.btn.btn-dark, button.btn.btn-danger{
   width: 200px;
   margin-top: 20px;
+  margin-right: 10px;
+}
+
+button.delete{
+  border: none;
 }
 
 footer#rodape {
