@@ -1,38 +1,58 @@
-let data = [
-    {
-      id: 1,
-      title: "Batman vs Superman: A Origem da Justiça",
-      year: 2016,
-      genre: "Ação/Aventura",
-      parental_rating: 12,
-      duration: "3h3m",
-      synopsis: "Lorem ipsum dolor sit amet consectetur adipisicing elit...",
-    },
-    {
-      id: 2,
-      title: "Vingadores: Ultimato",
-      year: 2019,
-      genre: "Ação/Ficção científica",
-      parental_rating: 13,
-      duration: "3h2m",
-      synopsis: "Lorem ipsum dolor sit amet consectetur adipisicing elit...",
-    },
-  ]
+const Database = require("../db/config");
 
-  module.exports = {
-    get(){
-      return data;
-    },
+module.exports = {
+  async get() {
+    const db = await Database();
 
-    update(newMovie){
-      return data = newMovie;
-    },
+    const data = await db.all(`
+    SELECT * 
+    FROM movies m
+    INNER JOIN genres g
+    on m.genre_id = g.genre_id
+    ;`);
 
-    delete(movieId){
-      data = data.filter((movie) => Number(movie.id) !== Number(movieId));
-    },
+    await db.close();
 
-    create(newMovie){
-      data.push(newMovie);
-    }
-  }
+    return data;
+  },
+
+  async getGenres(){
+    const db = await Database();
+
+    const genres = await db.all(`SELECT * FROM genres;`);
+
+    await db.close();
+
+    return genres;
+
+  },
+
+  async update(newMovie) {
+    const db = await Database();
+
+    await db.run(`
+    UPDATE movies 
+    SET title = "${newMovie.title}",
+    year = ${newMovie.year},
+    genre_id ${newMovie.id},
+    parental_rating ${newMovie.parental_rating},
+    duration "${newMovie.duration}",
+    synopsis "${newMovie.synopsis}"
+    WHERE movie_id = ${newMovie.movie_id}
+    ;`)
+
+    await db.close();
+
+    return (data = newMovie);
+  },
+
+  delete(movieId) {
+    //const db = await Database();
+    data = data.filter((movie) => Number(movie.id) !== Number(movieId));
+  },
+
+  create(newMovie) {
+    //const db = await Database()
+    data.push(newMovie);
+  },
+};

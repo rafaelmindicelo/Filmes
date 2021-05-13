@@ -19,7 +19,7 @@ CREATE TABLE movies (
   genre_id INT,
   parental_rating INT(3),
   duration TEXT(5),
-  SYNOPSIS TEXT,
+  synopsis TEXT,
   CONSTRAINT fk_GenreId FOREIGN KEY (genre_id) REFERENCES genres(genre_id)
   );
 `);

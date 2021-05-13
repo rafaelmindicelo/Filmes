@@ -1,17 +1,18 @@
 const Movie = require("../model/movies");
 
 module.exports = {
-  index(req, res) {
-    const movies = Movie.get();
+  async index(req, res) {
+    const movies = await Movie.get();
     res.render("pages/movies", { movies });
   },
 
-  create(req, res) {
-    res.render("pages/register");
+  async create(req, res) {
+    const genres = await Movie.getGenres();
+    res.render("pages/register", { genres });
   },
 
-  save(req, res) {
-    const movies = Movie.get();
+  async save(req, res) {
+    const movies = await Movie.get();
     const lastId = movies[movies.length - 1]?.id || 0;
 
     Movie.create({
@@ -22,9 +23,9 @@ module.exports = {
     return res.redirect("/movies");
   },
 
-  show(req, res) {
+  async show(req, res) {
     const movieId = req.params.id;
-    const movies = Movie.get();
+    const movies = await Movie.get();
 
     const movie = movies.find((movie) => Number(movie.id) === Number(movieId));
 
@@ -36,11 +37,11 @@ module.exports = {
     return res.render("pages/movieEdit", { movie });
   },
 
-  update(req, res) {
+  async update(req, res) {
     const movieId = req.params.id;
-    const movies = Movie.get();
+    const movies = await Movie.get();
 
-    let movie = movies.find((movie) => Number(movie.id) === Number(movieId));
+    let movie = movies.find((movie) => Number(movie.movie_id) === Number(movieId));
 
     //refatorar
     if (!movie) {
@@ -57,14 +58,7 @@ module.exports = {
       synopsis: req.body.synopsis,
     };
 
-    const newMovies = movies.map((movie) => {
-      if (Number(movie.id) === Number(movieId)) {
-        movie = updatedMovie;
-      }
-      return movie;
-    });
-
-    Movie.update(newMovies);
+    await Movie.update(updatedMovie);
 
     res.redirect("/movie/" + movieId);
   },

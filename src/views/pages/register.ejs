@@ -23,14 +23,10 @@
           <div class="form-group col-md-4 offset-md-2">
             <label for="genre">Gênero</label>
             <select id="genre" name="genre" class="form-control">
-              <option selected>Escolha...</option>
-              <option value="Ação e Aventura">Ação e Aventura</option>
-              <option value="Comédia">Comédia</option>
-              <option value="Documentário">Documentário</option>
-              <option value="Drama">Drama</option>
-              <option value="Romance">Romance</option>
-              <option value="Terror">Terror</option>
-              <option value="Outros">Outros</option>
+              <option value="0" selected>Escolha ...</option>
+              <% genres.forEach((genre) => { %> 
+              <option value="<%= genre.genre_id %> "><%= genre.genre %> </option>
+              <% }) %>                
             </select>
           </div>
           <div class="form-group col-md-2">
