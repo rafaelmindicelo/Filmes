@@ -32,12 +32,15 @@
               <td><%= movie.duration %></td>
               <td><%= movie.synopsis %></td>
               <td>
-                <a href="/movie/<%= movie.id %> " title="Editar Filme">
+                <a href="/movie/<%= movie.movie_id %> " title="Editar Filme">
                   <img src="./images/edit_icon.png" alt="Edit_Icon" />
                 </a>
               </td>
               <td>
-                <a href="/movie/delete/<%= movie.id %> " title="Excluir Filme">
+                <a
+                  href="/movie/delete/<%= movie.movie_id %> "
+                  title="Excluir Filme"
+                >
                   <img src="./images/delete_icon.png" alt="Delete_Icon" />
                 </a>
               </td>
@@ -46,8 +49,8 @@
             <% }); %>
           </tbody>
         </table>
-      </div>      
-
+      </div>
+    </div>
     <%- include("../parts/footer") %> <%- include("../parts/bundle") %>
   </body>
 </html>

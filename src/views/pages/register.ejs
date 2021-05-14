@@ -11,11 +11,11 @@
         <div class="form-row">
           <div class="form-group col-md-6 offset-md-2">
             <label for="title">Título</label>
-            <input type="text" class="form-control" id="title" name="title"/>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Digite o nome do filme" required/>
           </div>
           <div class="form-group col-md-2">
             <label for="year">Ano</label>
-            <input type="text" class="form-control" id="year" name="year"/>
+            <input type="text" class="form-control" id="year" name="year" placeholder="Ano de lançamento" required/>
           </div>
         </div>
 
@@ -23,7 +23,7 @@
           <div class="form-group col-md-4 offset-md-2">
             <label for="genre">Gênero</label>
             <select id="genre" name="genre" class="form-control">
-              <option value="0" selected>Escolha ...</option>
+              <option value="0" selected>Escolha o gênero do filme</option>
               <% genres.forEach((genre) => { %> 
               <option value="<%= genre.genre_id %>"><%= genre.genre %> </option>
               <% }) %>                
@@ -31,18 +31,18 @@
           </div>
           <div class="form-group col-md-2">
             <label for="parental_rating">Classificação</label>
-            <input type="number" class="form-control" id="parental_rating" name="parental_rating" />
+            <input type="number" class="form-control" id="parental_rating" name="parental_rating" placeholder="Classif Indicativa" required/>
           </div>
           <div class="form-group col-md-2">
             <label for="duration">Duração</label>
-            <input type="text" class="form-control" id="duration" name="duration"/>
+            <input type="text" class="form-control" id="duration" name="duration" placeholder="Ex.: 1h20m" required/>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group col-md-8 offset-md-2">
             <label for="synopsis">Sinópse</label>
-            <textarea class="form-control" id="synopsis" name="synopsis" rows="5"></textarea>
+            <textarea class="form-control" id="synopsis" name="synopsis" rows="5" placeholder="Breve descrição do filme" required></textarea>
           </div>
         </div>
 

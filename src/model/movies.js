@@ -34,21 +34,26 @@ module.exports = {
     UPDATE movies 
     SET title = "${newMovie.title}",
     year = ${newMovie.year},
-    genre_id ${newMovie.id},
-    parental_rating ${newMovie.parental_rating},
-    duration "${newMovie.duration}",
-    synopsis "${newMovie.synopsis}"
+    genre_id = ${newMovie.genre_id},
+    parental_rating = ${newMovie.parental_rating},
+    duration = "${newMovie.duration}",
+    synopsis = "${newMovie.synopsis}"
     WHERE movie_id = ${newMovie.movie_id}
-    ;`)
+    ;`);
 
     await db.close();
 
-    return (data = newMovie);
   },
 
-  delete(movieId) {
-    //const db = await Database();
-    data = data.filter((movie) => Number(movie.id) !== Number(movieId));
+  async delete(movieId) {
+    const db = await Database();
+    
+    await db.run(`
+    DELETE FROM movies WHERE movie_id = ${movieId}
+    ;`);
+
+    await db.close();
+
   },
 
   async create(newMovie) {
