@@ -11,23 +11,12 @@
         <div class="form-row">
           <div class="form-group col-md-6 offset-md-2">
             <label for="title">Título</label>
-            <input
-              type="text"
-              class="form-control"
-              id="title"
-              name="title"
-              value="<%= movie.title  %>"
-            />
+            <input type="text" class="form-control" id="title" name="title" value="<%= movie.title  %>" placeholder="Digite o nome do filme" required/>
           </div>
           <div class="form-group col-md-2">
             <label for="year">Ano</label>
-            <input
-              type="text"
-              class="form-control"
-              id="year"
-              name="year"
-              value="<%= movie.year  %>"
-            />
+            <input type="text" class="form-control" id="year" name="year"value="<%= movie.year  %>" placeholder="Ano de lançamento" required
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
           </div>
         </div>
 
@@ -43,37 +32,26 @@
           </div>
           <div class="form-group col-md-2">
             <label for="parental_rating">Classificação</label>
-            <input
-              type="number"
-              class="form-control"
-              id="parental_rating"
-              name="parental_rating"
-              value="<%= movie.parental_rating  %>"
-            />
+            
+            <select id="parental_rating" name="parental_rating" class="form-control">
+              <option value="<%= movie.parental_rating_id %>"><%= movie.parental_rating %> </option>
+              <% parental_rating.forEach((parentalRating) => { %> 
+              <option value="<%= parentalRating.parental_rating_id %>"><%= parentalRating.parental_rating %> </option>
+              <% }) %>                
+            </select>
+
           </div>
           <div class="form-group col-md-2">
             <label for="duration">Duração</label>
-            <input
-              type="text"
-              class="form-control"
-              id="duration"
-              name="duration"
-              value="<%= movie.duration  %>"
-            />
+            <input type="text" class="form-control" id="duration" name="duration" 
+              value="<%= movie.duration  %>" placeholder="Ex.: 1h20m" maxlength="5" required/>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group col-md-8 offset-md-2">
             <label for="synopsis">Sinópse</label>
-            <textarea
-              class="form-control"
-              id="synopsis"
-              name="synopsis"
-              rows="5"
-            >
-<%= movie.synopsis  %></textarea
-            >
+            <textarea class="form-control" id="synopsis" name="synopsis" rows="5" placeholder="Breve descrição do filme" required><%= movie.synopsis  %></textarea>
           </div>
         </div>
 

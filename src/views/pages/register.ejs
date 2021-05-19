@@ -15,7 +15,8 @@
           </div>
           <div class="form-group col-md-2">
             <label for="year">Ano</label>
-            <input type="text" class="form-control" id="year" name="year" placeholder="Ano de lançamento" required/>
+            <input type="text" class="form-control" id="year" name="year" placeholder="Ano de lançamento" required
+            onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
           </div>
         </div>
 
@@ -31,11 +32,17 @@
           </div>
           <div class="form-group col-md-2">
             <label for="parental_rating">Classificação</label>
-            <input type="number" class="form-control" id="parental_rating" name="parental_rating" placeholder="Classif Indicativa" required/>
+
+            <select id="parental_rating" name="parental_rating" class="form-control">
+              <% parental_rating.forEach((parentalRating) => { %> 
+              <option value="<%= parentalRating.parental_rating_id %>"><%= parentalRating.parental_rating %> </option>
+              <% }) %>                
+            </select>
+            
           </div>
           <div class="form-group col-md-2">
             <label for="duration">Duração</label>
-            <input type="text" class="form-control" id="duration" name="duration" placeholder="Ex.: 1h20m" required/>
+            <input type="text" class="form-control" id="duration" name="duration" placeholder="Ex.: 1h20m" required maxlength="5"/>
           </div>
         </div>
 

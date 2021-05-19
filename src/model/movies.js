@@ -9,6 +9,8 @@ module.exports = {
     FROM movies m
     INNER JOIN genres g
     on m.genre_id = g.genre_id
+    INNER JOIN parental_rating pr
+    on m.parental_rating_id = pr.parental_rating_id
     ;`);
 
     await db.close();
@@ -27,6 +29,18 @@ module.exports = {
 
   },
 
+  async getParentalRating(){
+
+    const db = await Database();
+
+    const parental_rating = await db.all(`SELECT * FROM parental_rating;`);
+
+    await db.close();
+
+    return parental_rating;
+
+  },
+
   async update(newMovie) {
     const db = await Database();
 
@@ -35,7 +49,7 @@ module.exports = {
     SET title = "${newMovie.title}",
     year = ${newMovie.year},
     genre_id = ${newMovie.genre_id},
-    parental_rating = ${newMovie.parental_rating},
+    parental_rating_id = ${newMovie.parental_rating_id},
     duration = "${newMovie.duration}",
     synopsis = "${newMovie.synopsis}"
     WHERE movie_id = ${newMovie.movie_id}
@@ -60,7 +74,7 @@ module.exports = {
     const db = await Database();
 
     await db.run(`
-    INSERT INTO movies (title, year, genre_id, parental_rating, duration, synopsis)
+    INSERT INTO movies (title, year, genre_id, parental_rating_id, duration, synopsis)
     VALUES (
       "${newMovie.title}",
       ${newMovie.year},

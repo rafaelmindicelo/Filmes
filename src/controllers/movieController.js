@@ -8,10 +8,31 @@ module.exports = {
 
   async create(req, res) {
     const genres = await Movie.getGenres();
-    res.render("pages/register", { genres });
+    const parental_rating = await Movie.getParentalRating();
+    res.render("pages/register", { genres, parental_rating });
   },
 
-  async save(req, res) {    
+  async save(req, res) {
+    
+    const title = req.body.title;
+    const year = req.body.year;
+    const genre = req.body.genre;    
+    const duration = req.body.duration;
+    const synopsis = req.body.synopsis;
+    const current_year = new Date().getFullYear();
+
+    if(title.trim() === "" || duration.trim() === "" || synopsis.trim() === ""){
+      return res.status(400).json({ error: "Obrigatório preencher todos os campos." });
+    }
+
+    if(Number(year) < 1888 || Number(year) > current_year){
+      return res.status(400).json({ error: `${year} é um ano de lançamento inválido.`});
+    }
+
+    if(Number(genre) === 0){
+      return res.status(400).json({ error: "Selecione o gênero do filme."});
+    }
+
     await Movie.create({      
       ...req.body,
     });   
@@ -23,28 +44,49 @@ module.exports = {
     const movieId = req.params.id;
     const movies = await Movie.get();
     const genres = await Movie.getGenres();
+    const parental_rating = await Movie.getParentalRating();
 
     const movie = movies.find((movie) => Number(movie.movie_id) === Number(movieId));
-
+    
     //refatorar
     if (!movie) {
       return res.send("Movie not found :)");
     }
 
-    return res.render("pages/movieEdit", { movie, genres });
+    return res.render("pages/movieEdit", { movie, genres, parental_rating });
   },
 
   async update(req, res) {
     const movieId = req.params.id;
+
+    const title = req.body.title;
+    const year = req.body.year;
+    const genre_id = req.body.genre;
+    const parental_rating_id = req.body.parental_rating    
+    const duration = req.body.duration;
+    const synopsis = req.body.synopsis;
+    const current_year = new Date().getFullYear();
+
+    if(title.trim() === "" || duration.trim() === "" || synopsis.trim() === ""){
+      return res.status(400).json({ error: "Obrigatório preencher todos os campos." });
+    }
+
+    if(Number(year) < 1888 || Number(year) > current_year){
+      return res.status(400).json({ error: `${year} é um ano de lançamento inválido.`});
+    }
+
+    if(Number(genre_id) === 0){
+      return res.status(400).json({ error: "Selecione o gênero do filme."});
+    }
     
     const updatedMovie = {
       movie_id: movieId,      
-      title: req.body.title,
-      year: req.body.year,
-      genre_id: req.body.genre,
-      parental_rating: req.body.parental_rating,
-      duration: req.body.duration,
-      synopsis: req.body.synopsis
+      title,
+      year,
+      genre_id,
+      parental_rating_id,
+      duration,
+      synopsis
     };
     
     await Movie.update(updatedMovie);
