@@ -2,7 +2,9 @@ const Movie = require("../model/movies");
 
 module.exports = {
   async index(req, res) {
+   
     const movies = await Movie.get();
+    
     res.render("pages/movies", { movies });
   },
 

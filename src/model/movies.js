@@ -21,7 +21,7 @@ module.exports = {
   async getGenres(){
     const db = await Database();
 
-    const genres = await db.all(`SELECT * FROM genres;`);
+    const genres = await db.all(`SELECT * FROM genres ORDER BY genre;`);
 
     await db.close();
 

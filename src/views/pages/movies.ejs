@@ -6,6 +6,7 @@
     <div id="interface" class="container">
       <h2 class="display-5">Filmes</h2>
       <hr class="my-4" />
+
       <div class="table-responsive">
         <table id="filmes" class="table">
           <thead class="thead-dark">
@@ -17,7 +18,6 @@
               <th scope="col">Classificação</th>
               <th scope="col">Duração</th>
               <th scope="col">Sinópse</th>
-              <th scope="col"></th>
               <th scope="col"></th>
             </tr>
           </thead>
@@ -35,15 +35,7 @@
                 <a href="/movie/<%= movie.movie_id %> " title="Editar Filme">
                   <img src="./images/edit_icon.png" alt="Edit_Icon" />
                 </a>
-              </td>
-              <td>
-                <a
-                  href="/movie/delete/<%= movie.movie_id %> "
-                  title="Excluir Filme"
-                >
-                  <img src="./images/delete_icon.png" alt="Delete_Icon" />
-                </a>
-              </td>
+              </td>              
             </tr>
 
             <% }); %>
